@@ -1,4 +1,6 @@
-## Clone the GitHub repository
+## Setup and Installation
+
+[Python](https://www.python.org/downloads/release/python-3124/) version used - 3.12.4
 
 - Make sure git is [setup](https://www.theodinproject.com/lessons/foundations-setting-up-git) properly on your system.
 
