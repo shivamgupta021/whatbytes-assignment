@@ -7,7 +7,7 @@ from .models import User
 
 
 class UserSignupForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
+    class Meta:
         model = User
         fields = ("username", "email")
 
