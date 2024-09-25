@@ -1,34 +1,74 @@
 {% extends "accounts/base.html" %}
 {% block content %}
-    <div class="card"
-         style="padding: 20px; background-color: #ffffff; color: #333; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
-        <h2 style="margin-bottom: 20px; font-family: 'Arial', sans-serif;">Welcome, {{ user.username }}!</h2>
-        <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-            <li style="margin: 15px 0;">
-                <a href="{% url 'profile' %}"
-                   style="text-decoration: none; color: #007BFF; font-weight: bold; transition: color 0.3s;">Profile</a>
+    <div class="card">
+        <h2>Welcome, {{ user.username }}!</h2>
+        <ul>
+            <li>
+                <a href="{% url 'profile' %}">Profile</a>
             </li>
-            <li style="margin: 15px 0;">
-                <a href="{% url 'password_change' %}"
-                   style="text-decoration: none; color: #007BFF; font-weight: bold; transition: color 0.3s;">Change
-                    Password</a>
+            <li>
+                <a href="{% url 'password_change' %}">Change Password</a>
             </li>
-            <li style="margin: 15px 0;">
-                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+            <li>
+                <form method="post" action="{% url 'logout' %}" class="logout-form">
                     {% csrf_token %}
-                    <button type="submit"
-                            style="background-color: #007BFF; color: white; border: none; border-radius: 5px; padding: 10px 15px; cursor: pointer; font-weight: bold; transition: background-color 0.3s;">
-                        Log Out
-                    </button>
+                    <button type="submit">Log Out</button>
                 </form>
             </li>
         </ul>
     </div>
 
     <style>
-        .card a {
-            font-size: 16px;
+        .card {
+            padding: 20px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
             font-family: 'Arial', sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .logout-form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .logout-form button:hover {
+            background-color: #0056b3;
         }
     </style>
 {% endblock %}
